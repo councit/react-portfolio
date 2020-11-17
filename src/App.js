@@ -1,10 +1,10 @@
-import AboutSection from "./components/AboutSection";
+import AboutMe from "./pages/AboutMe";
 
 function App() {
   return (
     <div className="App">
       <h1>Portfolio</h1>
-      <AboutSection />
+      <AboutMe />
     </div>
   );
 }
