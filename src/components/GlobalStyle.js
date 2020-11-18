@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.1 rem;
         cursor: pointer;
         padding: 1rem 2rem;
+        margin: 2rem 0;
         border: 3px solid #23d997;
         background-color: transparent;
         color: white;
