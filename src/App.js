@@ -3,6 +3,7 @@ import GlobalStyle from "./components/GlobalStyle";
 import Nav from "./components/Nav";
 import ContactMe from "./pages/ContactMe";
 import Projects from "./pages/Projects";
+import ProjectDetail from "./pages/ProjectDetail";
 import { Switch, Route } from "react-router-dom";
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
         <Route path="/projects" exact>
           <Projects />
         </Route>
+        <Route exact path="/work/:id">
+          <ProjectDetail />
+        </Route>
+
         <Route path="/contact" exact>
           <ContactMe />
         </Route>
