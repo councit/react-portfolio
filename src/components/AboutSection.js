@@ -3,6 +3,7 @@ import home1 from "../img/home1.png";
 import { motion } from "framer-motion";
 import { About, Description, Image, Hide } from "../styles";
 import { titleAnimation, fade, photoAnimation } from "../animation";
+import Wave from "./Wave";
 
 const AboutSection = () => {
   return (
@@ -34,6 +35,7 @@ const AboutSection = () => {
           alt="taylor council"
         ></motion.img>
       </Image>
+      <Wave />
     </About>
   );
 };
