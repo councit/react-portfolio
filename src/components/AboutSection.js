@@ -1,5 +1,6 @@
 import React from "react";
-import home1 from "../img/home1.png";
+import { Link } from "react-router-dom";
+import home1 from "../img/home-create.svg";
 import { motion } from "framer-motion";
 import { About, Description, Image, Hide } from "../styles";
 import { titleAnimation, fade, photoAnimation } from "../animation";
@@ -11,7 +12,9 @@ const AboutSection = () => {
       <Description>
         <motion.div>
           <Hide>
-            <motion.h2 variants={titleAnimation}>We work to make</motion.h2>
+            <motion.h2 variants={titleAnimation}>
+              My Passion is to make
+            </motion.h2>
           </Hide>
           <Hide>
             <motion.h2 variants={titleAnimation}>
@@ -23,10 +26,13 @@ const AboutSection = () => {
           </Hide>
         </motion.div>
         <motion.p variants={fade}>
-          Contact me for any project ideas you have. I am deticated to providing
-          you with the best product that you <span>love.</span>
+          Contact me for any web development oppurtunities you have. I am
+          deticated to providing you with the best solution that you{" "}
+          <span>love.</span>
         </motion.p>
-        <motion.button variants={fade}>Contact Me</motion.button>
+        <Link to="/contact">
+          <motion.button variants={fade}>Contact Me</motion.button>
+        </Link>
       </Description>
       <Image>
         <motion.img

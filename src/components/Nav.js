@@ -23,19 +23,19 @@ const Nav = () => {
           ></Line>
         </li>
         <li>
-          <Link to="/Projects">2. Projects</Link>
+          <Link to="/projects">2. Projects</Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
-            animate={{ width: pathname === "/Projects" ? "50%" : "0%" }}
+            animate={{ width: pathname === "/projects" ? "50%" : "0%" }}
           ></Line>
         </li>
         <li>
-          <Link to="/Contact">3. Contact Me</Link>
+          <Link to="/contact">3. Contact Me</Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
-            animate={{ width: pathname === "/Contact" ? "50%" : "0%" }}
+            animate={{ width: pathname === "/contact" ? "50%" : "0%" }}
           ></Line>
         </li>
       </ul>

@@ -1,13 +1,13 @@
 import React from "react";
-import clock from "../img/clock.svg";
-import diaphragm from "../img/diaphragm.svg";
-import money from "../img/money.svg";
-import teamwork from "../img/teamwork.svg";
-import home2 from "../img/home2.png";
+import react from "../img/react.svg";
+import javascript from "../img/js.svg";
+import css from "../img/css3.svg";
+import html from "../img/html5.svg";
+import leader from "../img/leader.svg";
+import communication from "../img/communication.svg";
 import styled from "styled-components";
+import profile from "../img/taylor-big.png";
 import { About, Description, Image } from "../styles";
-import { useInView } from "react-intersection-observer";
-import { useAnimation } from "framer-motion";
 import { scrollReveal } from "../animation";
 import { useScroll } from "./useScroll";
 
@@ -23,43 +23,66 @@ const ServicesSection = () => {
     >
       <Description>
         <h2>
-          High <span>quality</span> services
+          Skills that <span>matter.</span>
         </h2>
         <Cards>
           <Card>
             <div className="icon">
-              <img src={clock} alt="clock"></img>
-              <h3>Efficient</h3>
+              <img src={react} alt="react"></img>
+              <h3>ReactJs</h3>
             </div>
-            <p>this is filler text fill out later</p>
-          </Card>
-          <Card>
-            <div className="diaphragm">
-              <div className="icon">
-                <img src={diaphragm} alt="diaphragm"></img>
-                <h3>Diaphragm</h3>
-              </div>
-              <p>this is filler text fill out later</p>
-            </div>
+            <p>I build quick and scalable react applications.</p>
           </Card>
           <Card>
             <div className="icon">
-              <img src={money} alt="money"></img>
-              <h3>Money</h3>
+              <img src={javascript} alt="javascript"></img>
+              <h3>JavaScript</h3>
             </div>
-            <p>this is filler text fill out later</p>
+            <p>
+              I create custom functions and tools to provide flexible and robust
+              solitions.
+            </p>
           </Card>
           <Card>
             <div className="icon">
-              <img src={teamwork} alt="teamwork"></img>
-              <h3>teamwork</h3>
+              <img src={css} alt="css"></img>
+              <h3>CSS</h3>
             </div>
-            <p>this is filler text fill out later</p>
+            <p>I bring design to life using tools such as CSS and SASS</p>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={html} alt="html"></img>
+              <h3>HTML</h3>
+            </div>
+            <p>
+              Using sematic HTML, I ensure that my applications can be accessed
+              by all users.
+            </p>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={leader} alt="leadership"></img>
+              <h3>Leadership</h3>
+            </div>
+            <p>
+              I have ample experience managing large cross-functional teams.
+            </p>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={communication} alt="communication"></img>
+              <h3>Communication</h3>
+            </div>
+            <p>
+              My customers are my number one priority. I ensure that the needs
+              are clearly unserstood by all stakeholders.
+            </p>
           </Card>
         </Cards>
       </Description>
       <Image>
-        <img src={home2} alt="another pic of me"></img>
+        <img src={profile} alt="another pic of me"></img>
       </Image>
     </Services>
   );

@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 //images
-import athlete from "../img/athlete-small.png";
-import theracer from "../img/theracer-small.png";
-import goodtimes from "../img/goodtimes-small.png";
+import crwn from "../img/crwn-clothing.png";
+import musicPlayer from "../img/music-player.png";
+import a11y from "../img/a11y.png";
 
 import { motion } from "framer-motion";
 import {
@@ -39,13 +39,13 @@ const Projects = () => {
         <Frame4 variants={slider}></Frame4>
       </motion.div>
       <Movie>
-        <motion.h2 variants={fade}>The Athlete</motion.h2>
+        <motion.h2 variants={fade}>Crwn-Clothing</motion.h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/the-athlete">
           <Hide>
             <motion.img
               variants={photoAnimation}
-              src={athlete}
+              src={crwn}
               alt="running athlete"
             ></motion.img>
           </Hide>
@@ -57,10 +57,12 @@ const Projects = () => {
         animate={controls}
         initial="hidden"
       >
-        <h2>The Racer</h2>
+        <h2>Wave Music Player</h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/the-racer">
-          <img src={theracer} alt="car chase"></img>
+          <div className="img-wrapper">
+            <img className="music-img" src={musicPlayer} alt="car chase"></img>
+          </div>
         </Link>
       </Movie>
       <Movie
@@ -69,10 +71,12 @@ const Projects = () => {
         animate={controls2}
         initial="hidden"
       >
-        <h2>Good Times</h2>
+        <h2>Web Accessibility Blog: My A11Y</h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/good-times">
-          <img src={goodtimes} alt="good times happy"></img>
+          <div className="img-container">
+            <img src={a11y} alt="good times happy"></img>
+          </div>
         </Link>
       </Movie>
       <ScrollTop />
@@ -105,6 +109,13 @@ const Movie = styled(motion.div)`
     height: 70vh;
     object-fit: cover;
   }
+  .music-img {
+    max-width: 1140px;
+  }
+  .img-wrapper {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const Hide = styled.div`
@@ -117,20 +128,20 @@ const Frame1 = styled(motion.div)`
   top: 10%;
   width: 100%;
   height: 100vh;
-  background: #fffebf;
+  background: #1b1b1b;
   z-index: 2;
 `;
 
 const Frame2 = styled(Frame1)`
-  background: #ff8efb;
+  background: #23d997;
 `;
 
 const Frame3 = styled(Frame1)`
-  background: #8ed2ff;
+  background: #d96ed4;
 `;
 
 const Frame4 = styled(Frame1)`
-  background: #8effa0;
+  background: #fff;
 `;
 
 export default Projects;
