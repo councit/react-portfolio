@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { ProjectState } from "../projectState";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animation";
+import ScrollTop from "../components/ScrollTop";
 
 const ProjectDetail = () => {
   const history = useHistory();
@@ -44,6 +45,7 @@ const ProjectDetail = () => {
           <ImageDisplay>
             <img src={project.secondaryImg} alt="detailed project"></img>
           </ImageDisplay>
+          <ScrollTop />
         </Details>
       )}
     </>
@@ -75,6 +77,10 @@ const Awards = styled.div`
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+  @media (max-width: 1200px) {
+    display: block;
+    margin: 2rem 2rem;
+  }
 `;
 
 const AwardStyle = styled.div`

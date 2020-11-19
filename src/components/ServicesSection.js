@@ -6,10 +6,21 @@ import teamwork from "../img/teamwork.svg";
 import home2 from "../img/home2.png";
 import styled from "styled-components";
 import { About, Description, Image } from "../styles";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion";
+import { scrollReveal } from "../animation";
+import { useScroll } from "./useScroll";
 
 const ServicesSection = () => {
+  const [element, controls] = useScroll();
+
   return (
-    <Services>
+    <Services
+      ref={element}
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+    >
       <Description>
         <h2>
           High <span>quality</span> services
@@ -67,6 +78,9 @@ const Services = styled(About)`
 const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 1200px) {
+    justify-content: center;
+  }
 `;
 
 const Card = styled.div`

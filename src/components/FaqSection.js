@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { About } from "../styles";
+import Toggle from "./Toggle";
+import { useScroll } from "./useScroll";
+import { scrollReveal } from "../animation";
 
 const FaqSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <Faq>
+    <Faq
+      variants={scrollReveal}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+    >
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
@@ -12,6 +21,7 @@ const FaqSection = () => {
         <h4>How Do I Start?</h4>
         <div className="answer">
           <p>this is more filler text</p>
+
           <p>
             this is a longer filler text this one will be more words and fill
             out the answer more.
@@ -19,6 +29,7 @@ const FaqSection = () => {
         </div>
         <div className="faq-line"></div>
       </div>
+
       <div className="question">
         <h4>How Do I Start?</h4>
         <div className="answer">
