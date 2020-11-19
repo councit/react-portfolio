@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import styled from "styled-components";
 import { About } from "../styles";
-import Toggle from "./Toggle";
+// import Toggle from "./Toggle";
 import { useScroll } from "./useScroll";
 import { scrollReveal } from "../animation";
 
