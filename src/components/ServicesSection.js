@@ -6,8 +6,7 @@ import html from "../img/html5.svg";
 import leader from "../img/leader.svg";
 import communication from "../img/communication.svg";
 import styled from "styled-components";
-import profile from "../img/taylor-big.png";
-import { About, Description, Image } from "../styles";
+import { About, Description } from "../styles";
 import { scrollReveal } from "../animation";
 import { useScroll } from "./useScroll";
 
@@ -81,9 +80,6 @@ const ServicesSection = () => {
           </Card>
         </Cards>
       </Description>
-      <Image>
-        <img src={profile} alt="another pic of me"></img>
-      </Image>
     </Services>
   );
 };

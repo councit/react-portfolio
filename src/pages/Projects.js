@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 //images
 import crwn from "../img/crwn-clothing.png";
@@ -41,15 +40,14 @@ const Projects = () => {
       <Movie>
         <motion.h2 variants={fade}>Crwn-Clothing</motion.h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
-        <Link to="/work/the-athlete">
-          <Hide>
-            <motion.img
-              variants={photoAnimation}
-              src={crwn}
-              alt="running athlete"
-            ></motion.img>
-          </Hide>
-        </Link>
+
+        <Hide>
+          <motion.img
+            variants={photoAnimation}
+            src={crwn}
+            alt="running athlete"
+          ></motion.img>
+        </Hide>
       </Movie>
       <Movie
         variants={scrollReveal}
@@ -59,11 +57,10 @@ const Projects = () => {
       >
         <h2>Wave Music Player</h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
-        <Link to="/work/the-racer">
-          <div className="img-wrapper">
-            <img className="music-img" src={musicPlayer} alt="car chase"></img>
-          </div>
-        </Link>
+
+        <div className="img-wrapper">
+          <img className="music-img" src={musicPlayer} alt="car chase"></img>
+        </div>
       </Movie>
       <Movie
         variants={scrollReveal}
@@ -73,11 +70,10 @@ const Projects = () => {
       >
         <h2>Web Accessibility Blog: My A11Y</h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
-        <Link to="/work/good-times">
-          <div className="img-container">
-            <img src={a11y} alt="good times happy"></img>
-          </div>
-        </Link>
+
+        <div className="img-container">
+          <img src={a11y} alt="good times happy"></img>
+        </div>
       </Movie>
       <ScrollTop />
     </Work>
