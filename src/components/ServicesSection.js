@@ -30,7 +30,7 @@ const ServicesSection = () => {
               <img src={react} alt="react"></img>
               <h3>ReactJs</h3>
             </div>
-            <p>I build quick and scalable react applications.</p>
+            <p>I build dynamic React applications that scale.</p>
           </Card>
           <Card>
             <div className="icon">
@@ -39,7 +39,7 @@ const ServicesSection = () => {
             </div>
             <p>
               I create custom functions and tools to provide flexible and robust
-              solitions.
+              solutions.
             </p>
           </Card>
           <Card>
@@ -55,7 +55,7 @@ const ServicesSection = () => {
               <h3>HTML</h3>
             </div>
             <p>
-              Using sematic HTML, I ensure that my applications can be accessed
+              Using semantic HTML, I ensure that my applications can be accessed
               by all users.
             </p>
           </Card>
@@ -75,7 +75,7 @@ const ServicesSection = () => {
             </div>
             <p>
               My customers are my number one priority. I ensure that the needs
-              are clearly unserstood by all stakeholders.
+              are clearly understood by all stakeholders.
             </p>
           </Card>
         </Cards>
