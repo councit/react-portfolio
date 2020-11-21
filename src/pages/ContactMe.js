@@ -38,6 +38,7 @@ const ContactUs = () => {
             <label>Message</label>
             <textarea rows="20"></textarea>
           </div>
+          <button>Send It!</button>
         </form>
       </div>
       <ScrollTop />
@@ -49,6 +50,9 @@ const ContactStyle = styled(motion.div)`
   display: flex;
   color: #353535;
   min-height: 90vh;
+  button {
+    color: #1b1b1b;
+  }
   .left-wrapper {
     padding: 2rem 0;
     display: flex;
