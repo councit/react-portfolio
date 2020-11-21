@@ -6,16 +6,35 @@ import styled from "styled-components";
 import ScrollTop from "../components/ScrollTop";
 import filler from "../img/undraw_phone_call_grmk 1.svg";
 
+import emailjs from "emailjs-com";
+
 const ContactUs = () => {
   const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const sendIt = (e) => {
+  function sendEmail(e) {
     e.preventDefault();
-    console.log(firstName, lastName, email, message);
-  };
+
+    emailjs
+      .sendForm(
+        "service_m0e2wsc",
+        "template_ld2yphr",
+        e.target,
+        "user_evTX5gg4m1Uk6sM1nEYVw"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    setFirstName("");
+    setEmail("");
+    setMessage("");
+  }
 
   return (
     <ContactStyle
@@ -32,25 +51,21 @@ const ContactUs = () => {
       </div>
       <div className="right-wrapper">
         <h2>Lets Talk.</h2>
-        <form>
+        <form onSubmit={sendEmail}>
           <div className="name-wrapper">
-            <label>First Name</label>
+            <label>Name</label>
             <input
               type="text"
+              name="from_name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-            ></input>
-            <label>Last Name</label>
-            <input
-              type="text"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
             ></input>
           </div>
           <div className="email-wrapper">
             <label>Email</label>
             <input
               type="email"
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             ></input>
@@ -58,12 +73,15 @@ const ContactUs = () => {
           <div className="message-wrapper">
             <label>Message</label>
             <textarea
+              name="message"
               rows="4"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
           </div>
-          <button onClick={sendIt}>Send It!</button>
+          <button type="submit" value="send">
+            Send It!
+          </button>
         </form>
       </div>
       <ScrollTop />
