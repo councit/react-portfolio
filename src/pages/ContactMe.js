@@ -1,9 +1,11 @@
 import React from "react";
 //Animations
 import { motion } from "framer-motion";
-import { pageAnimation, titleAnimation } from "../animation";
+import { pageAnimation } from "../animation";
 import styled from "styled-components";
 import ScrollTop from "../components/ScrollTop";
+// import caller from "../img/caller.svg";
+import filler from "../img/undraw_phone_call_grmk 1.svg";
 
 const ContactUs = () => {
   return (
@@ -14,30 +16,29 @@ const ContactUs = () => {
       animate="show"
       style={{ background: "#fff" }}
     >
-      <Title>
-        <Hide>
-          <motion.h2 variants={titleAnimation}>Get in touch.</motion.h2>
-        </Hide>
-      </Title>
-      <div>
-        <Hide>
-          <Social variants={titleAnimation}>
-            <Circle />
-            <h2>Send A Message</h2>
-          </Social>
-        </Hide>
-        <Hide>
-          <Social variants={titleAnimation}>
-            <Circle />
-            <h2>Send an email.</h2>
-          </Social>
-        </Hide>
-        <Hide>
-          <Social variants={titleAnimation}>
-            <Circle />
-            <h2>Social Media</h2>
-          </Social>
-        </Hide>
+      <div className="left-wrapper">
+        <h2>I Can't Wait To Hear</h2>
+        <h2>From You</h2>
+        <img src={filler} alt="waiting for a call"></img>
+      </div>
+      <div className="right-wrapper">
+        <h2>Lets Talk.</h2>
+        <form>
+          <div className="name-wrapper">
+            <label>First Name</label>
+            <input type="text"></input>
+            <label>Last Name</label>
+            <input type="text"></input>
+          </div>
+          <div className="email-wrapper">
+            <label>Email</label>
+            <input type="email"></input>
+          </div>
+          <div className="message-wrapper">
+            <label>Message</label>
+            <textarea rows="20"></textarea>
+          </div>
+        </form>
       </div>
       <ScrollTop />
     </ContactStyle>
@@ -45,35 +46,65 @@ const ContactUs = () => {
 };
 
 const ContactStyle = styled(motion.div)`
-  padding: 5rem 10rem;
+  display: flex;
   color: #353535;
   min-height: 90vh;
+  .left-wrapper {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    width: 50%;
+    background: #1b1b1b;
+    h2 {
+      width: 80%;
+    }
+    img {
+      padding-top: 10%;
+      width: 80%;
+    }
+  }
+  .right-wrapper {
+    padding: 2rem 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      width: 80%;
+    }
+    form {
+      display: block;
+      width: 80%;
+      margin: 2rem 0;
+      .name-wrapper {
+        input {
+          width: 50%;
+        }
+      }
+      .email-wrapper {
+        input {
+          width: 80%;
+        }
+      }
+      .message-wrapper {
+        display: flex;
+        flex-direction: column;
+        textarea {
+          width: 80%;
+          margin: 1rem 0;
+        }
+      }
+    }
+    input {
+      display: block;
+      margin: 2rem 0;
+    }
+  }
+
   @media (max-width: 1500px) {
-    padding: 2rem;
     font-size: 1rem;
-  }
-`;
-const Title = styled.div`
-  margin-bottom: 4rem;
-  color: black;
-  @media (max-width: 1500px) {
-    margin-top: 5rem;
-  }
-`;
-const Hide = styled.div`
-  overflow: hidden;
-`;
-const Circle = styled.div`
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  background: #353535;
-`;
-const Social = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  h2 {
-    margin: 2rem;
   }
 `;
 
