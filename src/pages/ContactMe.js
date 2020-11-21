@@ -36,7 +36,7 @@ const ContactUs = () => {
           </div>
           <div className="message-wrapper">
             <label>Message</label>
-            <textarea rows="20"></textarea>
+            <textarea rows="4"></textarea>
           </div>
           <button>Send It!</button>
         </form>
@@ -49,9 +49,20 @@ const ContactUs = () => {
 const ContactStyle = styled(motion.div)`
   display: flex;
   color: #353535;
-  min-height: 90vh;
+  height: 100vh;
+  label {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  input {
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    display: block;
+    margin: 1.5rem 0;
+  }
   button {
     color: #1b1b1b;
+    font-size: 1rem;
   }
   .left-wrapper {
     padding: 2rem 0;
@@ -97,13 +108,11 @@ const ContactStyle = styled(motion.div)`
         flex-direction: column;
         textarea {
           width: 80%;
-          margin: 1rem 0;
+          margin: 1.5rem 0;
+          font-family: "Inter", sans-serif;
+          font-size: 2rem;
         }
       }
-    }
-    input {
-      display: block;
-      margin: 2rem 0;
     }
   }
 
