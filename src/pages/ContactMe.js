@@ -162,6 +162,21 @@ const ContactStyle = styled(motion.div)`
   @media (max-width: 1500px) {
     font-size: 1rem;
   }
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    .left-wrapper {
+      display: none;
+    }
+    .right-wrapper {
+      width: 90%;
+      .message-wrapper {
+        width: 100%;
+        textarea {
+          width: 100%;
+        }
+      }
+    }
+  }
 `;
 
 export default ContactUs;
