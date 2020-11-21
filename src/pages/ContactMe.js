@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 //Animations
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animation";
 import styled from "styled-components";
 import ScrollTop from "../components/ScrollTop";
-// import caller from "../img/caller.svg";
 import filler from "../img/undraw_phone_call_grmk 1.svg";
 
 const ContactUs = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendIt = (e) => {
+    e.preventDefault();
+    console.log(firstName, lastName, email, message);
+  };
+
   return (
     <ContactStyle
       exit="exit"
@@ -26,19 +35,35 @@ const ContactUs = () => {
         <form>
           <div className="name-wrapper">
             <label>First Name</label>
-            <input type="text"></input>
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            ></input>
             <label>Last Name</label>
-            <input type="text"></input>
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            ></input>
           </div>
           <div className="email-wrapper">
             <label>Email</label>
-            <input type="email"></input>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            ></input>
           </div>
           <div className="message-wrapper">
             <label>Message</label>
-            <textarea rows="4"></textarea>
+            <textarea
+              rows="4"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
           </div>
-          <button>Send It!</button>
+          <button onClick={sendIt}>Send It!</button>
         </form>
       </div>
       <ScrollTop />
