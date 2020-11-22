@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 //images
-import crwn from "../img/crwn-clothing.png";
+import crwn from "../img/crwn-small.png";
 import musicPlayer from "../img/music-player.png";
 import a11y from "../img/a11y.png";
 
@@ -21,6 +21,11 @@ import { useScroll } from "../components/useScroll";
 import ScrollTop from "../components/ScrollTop";
 
 const Projects = () => {
+  const projectUrls = [
+    "https://crwn-council.herokuapp.com/",
+    "https://peaceful-mcclintock-0186b9.netlify.app/",
+    "https://councit.github.io/100DaysOfCode/WebAccessibility/index.html",
+  ];
   const [element, controls] = useScroll();
   const [element2, controls2] = useScroll();
   return (
@@ -38,15 +43,41 @@ const Projects = () => {
         <Frame4 variants={slider}></Frame4>
       </motion.div>
       <Movie>
-        <motion.h2 variants={fade}>Crwn-Clothing</motion.h2>
-        <motion.div variants={lineAnimation} className="line"></motion.div>
-
         <Hide>
-          <motion.img
-            variants={photoAnimation}
-            src={crwn}
-            alt="running athlete"
-          ></motion.img>
+          <motion.h2 variants={fade}>Crwn-Clothing</motion.h2>
+          <motion.div variants={lineAnimation} className="line"></motion.div>
+          <Hide>
+            <ProjectWrapper>
+              <div className="right-wrapper">
+                <motion.img
+                  variants={photoAnimation}
+                  src={crwn}
+                  alt="running athlete"
+                ></motion.img>
+              </div>
+              <div className="left-wrapper">
+                <motion.h3 variants={fade}>Overview</motion.h3>
+                <motion.p variants={fade}>
+                  Scalable e-commerce site to showcase high-end boutique
+                  clothing. Clean reusable components and state management
+                  created with React and Redux. Customer and site data validated
+                  and stored using Google Firebase
+                </motion.p>
+                <motion.h3 variants={fade}>Technologies</motion.h3>
+                <motion.ul variants={fade}>
+                  <li>ReactJs</li>
+                  <li>Redux</li>
+                  <li>OAuth</li>
+                  <li>Google Firebase</li>
+                  <li>Stripe</li>
+                  <li>Heroku</li>
+                </motion.ul>
+                <a href={projectUrls[0]} target="_blank" rel="noreferrer">
+                  <motion.button variants={fade}>Check It Out!</motion.button>
+                </a>
+              </div>
+            </ProjectWrapper>
+          </Hide>
         </Hide>
       </Movie>
       <Movie
@@ -55,12 +86,38 @@ const Projects = () => {
         animate={controls}
         initial="hidden"
       >
-        <h2>Wave Music Player</h2>
+        <h2>Web Accessibility Blog: My A11Y</h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
 
-        <div className="img-wrapper">
-          <img className="music-img" src={musicPlayer} alt="car chase"></img>
-        </div>
+        <ProjectWrapper>
+          <div className="right-wrapper">
+            <motion.img
+              variants={photoAnimation}
+              src={musicPlayer}
+              alt="running athlete"
+            ></motion.img>
+          </div>
+          <div className="left-wrapper">
+            <motion.h3 variants={fade}>Overview</motion.h3>
+            <motion.p variants={fade}>
+              Single page React music player. This quick and responsive
+              application utilized stored API data to access a playlist I enjoy
+              listening to while I code. The primary focus of this project was
+              to utilize React Hooks to manage state. Click the link below to
+              enjoy!
+            </motion.p>
+            <motion.h3 variants={fade}>Technologies</motion.h3>
+            <motion.ul variants={fade}>
+              <li>ReactJs</li>
+              <li>SASS</li>
+              <li>Font Awesome Icon</li>
+              <li>Netlify</li>
+            </motion.ul>
+            <a href={projectUrls[1]} target="_blank" rel="noreferrer">
+              <motion.button variants={fade}>Check It Out!</motion.button>
+            </a>
+          </div>
+        </ProjectWrapper>
       </Movie>
       <Movie
         variants={scrollReveal}
@@ -71,9 +128,35 @@ const Projects = () => {
         <h2>Web Accessibility Blog: My A11Y</h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
 
-        <div className="img-container">
-          <img src={a11y} alt="good times happy"></img>
-        </div>
+        <ProjectWrapper>
+          <div className="right-wrapper">
+            <motion.img
+              variants={photoAnimation}
+              src={a11y}
+              alt="running athlete"
+            ></motion.img>
+          </div>
+          <div className="left-wrapper">
+            <motion.h3 variants={fade}>Overview</motion.h3>
+            <motion.p variants={fade}>
+              Web accessibility application to teach best practices to new
+              developers. Utilize semantic HTML, Tab Trapping, and showcasing
+              Keyboard Navigation to simulate user experience. Highlight current
+              tools to audit accessibility standards within developers’
+              applications.
+            </motion.p>
+            <motion.h3 variants={fade}>Technologies</motion.h3>
+            <motion.ul variants={fade}>
+              <li>JavaScript</li>
+              <li>HTMl</li>
+              <li>CSS</li>
+              <li>GitHub Pages</li>
+            </motion.ul>
+            <a href={projectUrls[2]} target="_blank" rel="noreferrer">
+              <motion.button variants={fade}>Check It Out!</motion.button>
+            </a>
+          </div>
+        </ProjectWrapper>
       </Movie>
       <ScrollTop />
     </Work>
@@ -116,6 +199,65 @@ const Movie = styled(motion.div)`
 
 const Hide = styled.div`
   overflow: hidden;
+`;
+const ProjectWrapper = styled.div`
+  h3 {
+    color: black;
+  }
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  h3 {
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+  .right-wrapper {
+    width: 60%;
+    img {
+      height: auto;
+    }
+  }
+  .left-wrapper {
+    display: flex;
+    max-width: 600px;
+    flex-direction: column;
+    justify-content: space-between;
+    p {
+      color: black;
+      font-size: 1.25rem;
+      margin-right: 2ren;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      font-size: 1.25rem;
+    }
+  }
+
+  button {
+    width: 15rem;
+    color: black;
+    font-size: 1rem;
+  }
+  @media (max-width: 750px) {
+    display: block;
+    h3 {
+      padding: 1rem;
+    }
+    .right-wrapper {
+      width: 100%;
+    }
+    .left-wrapper {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `;
 
 const Frame1 = styled(motion.div)`

@@ -171,9 +171,6 @@ const ContactStyle = styled(motion.div)`
       width: 90%;
       .message-wrapper {
         width: 100%;
-        textarea {
-          width: 100%;
-        }
       }
     }
   }
