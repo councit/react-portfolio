@@ -222,7 +222,7 @@ const ProjectWrapper = styled.div`
     display: flex;
     max-width: 600px;
     flex-direction: column;
-    justify-content: space-between;
+
     p {
       color: black;
       font-size: 1.25rem;
