@@ -27,7 +27,7 @@ const AboutSection = () => {
         </motion.div>
         <motion.p variants={fade}>
           Contact me for any web development opportunities you have. I am
-          dedicated to providing you with the best solution that you
+          dedicated to providing you with the solution that you
           <span> love.</span>
         </motion.p>
         <Link to="/contact">
