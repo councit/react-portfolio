@@ -86,7 +86,7 @@ const Projects = () => {
         animate={controls}
         initial="hidden"
       >
-        <h2>Web Accessibility Blog: My A11Y</h2>
+        <h2>Wave Music Player</h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
 
         <ProjectWrapper>
