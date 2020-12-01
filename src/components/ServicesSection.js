@@ -114,6 +114,12 @@ const Card = styled.div`
       padding: 1rem;
     }
   }
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+  }
 `;
 
 export default ServicesSection;
